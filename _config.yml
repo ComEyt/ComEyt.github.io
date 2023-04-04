@@ -1,5 +1,5 @@
 # Site settings
-title: YANGTONG's Blog
+title: My Blog
 SEOTitle: 杨桐的博客 | yangtong's Blog
 header-img: img/post-bg-desk.jpg
 email: yangtong990516@gmail.com
@@ -100,17 +100,11 @@ service-worker: true
 
 # Friends
 friends: [
-    {
-        title: "WY",
-        href: "http://zhengwuyang.com"
+   {
+        title: "Goole",
+        href: "https://google.com"
     },{
-        title: "简书·BY",
-        href: "http://www.jianshu.com/u/e71990ada2fd"
-    },{
-        title: "Apple",
-        href: "https://apple.com"
-    },{
-        title: "Apple Developer",
-        href: "https://developer.apple.com/"
+        title: "ChatGPT",
+        href: "https://chat.openai.com/chat"
     }
 ]
