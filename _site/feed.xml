@@ -1,354 +1,1652 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/jekyll-gitbook/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/jekyll-gitbook/" rel="alternate" type="text/html" /><updated>2023-04-03T18:43:50+08:00</updated><id>http://localhost:4000/jekyll-gitbook/feed.xml</id><title type="html">Jekyll Gitbook</title><subtitle>Build Jekyll site with the GitBook style.
-</subtitle><author><name>HE Tao</name></author><entry><title type="html">Tips, Warnings, and Dangers</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html" rel="alternate" type="text/html" title="Tips, Warnings, and Dangers" /><published>2022-06-30T00:00:00+08:00</published><updated>2022-06-30T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/tips_warnings_dangers</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2022-06-30-tips_warnings_dangers.html"><![CDATA[<p>The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred
-from <a href="https://discordjs.guide/popular-topics/canvas.html#setting-up-napi-rs-canvas">the discord.js website</a>.</p>
-
-<p>You could have the following <a href="https://kramdown.gettalong.org/quickref.html#block-attributes">markdown attributes (supported by kramdown)</a>:</p>
-
-<h3 id="tips">Tips</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-tip}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### TIP</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have</span>
-<span class="gt">&gt; this or a similar version after installation.</span>
-{: .block-tip }
-</code></pre></div></div>
-
-<blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
-
-  <p>This guide is last tested with @napi-rs/canvas^0.1.20, so make sure you have
-this or a similar version after installation.</p>
-</blockquote>
-
-<h3 id="warnings">Warnings</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-warning}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### WARNING</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; Be sure that you're familiar with things like async/await and object destructuring</span>
-<span class="gt">&gt; before continuing, as we'll be making use of features like these.</span>
-{: .block-warning }
-</code></pre></div></div>
-
-<blockquote class="block-warning">
-  <h5 id="warning">WARNING</h5>
-
-  <p>Be sure that you’re familiar with things like async/await and object destructuring
-before continuing, as we’ll be making use of features like these.</p>
-</blockquote>
-
-<h3 id="dangers">Dangers</h3>
-
-<p>Using a <code class="language-plaintext highlighter-rouge">{: .block-danger}</code> attribute:</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; ##### DANGER</span>
-<span class="gt">&gt;</span>
-<span class="gt">&gt; You cannot delete an ephemeral message.</span>
-{: .block-danger }
-</code></pre></div></div>
-
-<blockquote class="block-danger">
-  <h5 id="danger">DANGER</h5>
-
-  <p>You cannot delete an ephemeral message.</p>
-</blockquote>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-theme supports tips, warnings, and dangers blocks and the style is referred from the discord.js website.]]></summary></entry><entry><title type="html">Wide tables</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2022-06-26-wide_tables.html" rel="alternate" type="text/html" title="Wide tables" /><published>2022-06-26T00:00:00+08:00</published><updated>2022-06-26T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/wide_tables</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2022-06-26-wide_tables.html"><![CDATA[<p>A wide tables needs to be wrapped into a <code class="language-plaintext highlighter-rouge">div</code> with class <code class="language-plaintext highlighter-rouge">table-wrapper</code>
-to make sure it displayed as expected on mobile devices. For example,</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-wrapper"</span> <span class="na">markdown=</span><span class="s">"block"</span><span class="nt">&gt;</span>
-
-|title1|title2|title3|title4|title5|title6|title7|title8|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|1|2|3|4|5|6|7|8|
-|1|2|3|4|5|6|7|8|
-|1|2|3|4|5|6|7|8|
-|1|2|3|4|5|6|7|8|
-
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<p>Will be rendered as</p>
-
-<div class="table-wrapper">
-
-  <table>
-    <thead>
-      <tr>
-        <th style="text-align: center">title1</th>
-        <th style="text-align: center">title2</th>
-        <th style="text-align: center">title3</th>
-        <th style="text-align: center">title4</th>
-        <th style="text-align: center">title5</th>
-        <th style="text-align: center">title6</th>
-        <th style="text-align: center">title7</th>
-        <th style="text-align: center">title8</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align: center">1</td>
-        <td style="text-align: center">2</td>
-        <td style="text-align: center">3</td>
-        <td style="text-align: center">4</td>
-        <td style="text-align: center">5</td>
-        <td style="text-align: center">6</td>
-        <td style="text-align: center">7</td>
-        <td style="text-align: center">8</td>
-      </tr>
-      <tr>
-        <td style="text-align: center">1</td>
-        <td style="text-align: center">2</td>
-        <td style="text-align: center">3</td>
-        <td style="text-align: center">4</td>
-        <td style="text-align: center">5</td>
-        <td style="text-align: center">6</td>
-        <td style="text-align: center">7</td>
-        <td style="text-align: center">8</td>
-      </tr>
-      <tr>
-        <td style="text-align: center">1</td>
-        <td style="text-align: center">2</td>
-        <td style="text-align: center">3</td>
-        <td style="text-align: center">4</td>
-        <td style="text-align: center">5</td>
-        <td style="text-align: center">6</td>
-        <td style="text-align: center">7</td>
-        <td style="text-align: center">8</td>
-      </tr>
-      <tr>
-        <td style="text-align: center">1</td>
-        <td style="text-align: center">2</td>
-        <td style="text-align: center">3</td>
-        <td style="text-align: center">4</td>
-        <td style="text-align: center">5</td>
-        <td style="text-align: center">6</td>
-        <td style="text-align: center">7</td>
-        <td style="text-align: center">8</td>
-      </tr>
-    </tbody>
-  </table>
-
-</div>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[A wide tables needs to be wrapped into a div with class table-wrapper to make sure it displayed as expected on mobile devices. For example,]]></summary></entry><entry><title type="html">Page with cover image</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2022-05-24-page_cover.html" rel="alternate" type="text/html" title="Page with cover image" /><published>2022-05-24T00:00:00+08:00</published><updated>2022-05-24T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/page_cover</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2022-05-24-page_cover.html"><![CDATA[<p>The jekyll-gitbook theme supports adding a cover image to a specific page by adding
-a <code class="language-plaintext highlighter-rouge">cover</code> field to the page metadata:</p>
-
-<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ---
-  title: Page with cover image
-  author: Tao He
-  date: 2022-05-24
-  category: Jekyll
-  layout: post
-<span class="gi">+ cover: /assets/jekyll-gitbook/dinosaur.gif
-</span>  ---
-</code></pre></div></div>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-gitbook theme supports adding a cover image to a specific page by adding a cover field to the page metadata:]]></summary></entry><entry><title type="html">How to Generate TOC</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2021-08-10-toc.html" rel="alternate" type="text/html" title="How to Generate TOC" /><published>2021-08-10T00:00:00+08:00</published><updated>2021-08-10T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/toc</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2021-08-10-toc.html"><![CDATA[<p>The jekyll-gitbook theme leverages <a href="https://github.com/allejo/jekyll-toc">jekyll-toc</a> to generate the <em>Contents</em> for the page.
-The TOC feature is not enabled by default. To use the TOC feature, modify the TOC
-configuration in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
-    <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div></div>
-
-<h2 id="why-this-repo">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
-  <li>d</li>
-</ol>
-
-<h2 id="why-this-repo-1">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-</ul>
-
-<h2 id="why-this-repo-2">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>e</li>
-  <li>f</li>
-  <li>g</li>
-  <li>h</li>
-</ol>
-
-<h2 id="why-this-repo-3">Why this repo</h2>
-
-<ul>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-</ul>
-
-<h2 id="why-this-repo-4">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
-  <li>d</li>
-</ol>
-
-<h2 id="why-this-repo-5">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-</ul>
-
-<h2 id="why-this-repo-6">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>e</li>
-  <li>f</li>
-  <li>g</li>
-  <li>h</li>
-</ol>
-
-<h2 id="why-this-repo-7">Why this repo</h2>
-
-<ul>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-</ul>
-
-<h2 id="why-this-repo-8">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
-  <li>d</li>
-</ol>
-
-<h2 id="why-this-repo-9">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-</ul>
-
-<h2 id="why-this-repo-10">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>e</li>
-  <li>f</li>
-  <li>g</li>
-  <li>h</li>
-</ol>
-
-<h2 id="why-this-repo-11">Why this repo</h2>
-
-<ul>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-</ul>
-
-<h2 id="why-this-repo-12">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>a</li>
-  <li>b</li>
-  <li>c</li>
-  <li>d</li>
-</ol>
-
-<h2 id="why-this-repo-13">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-</ul>
-
-<h2 id="why-this-repo-14">Why this repo</h2>
-
-<p>long contents …..</p>
-
-<ol>
-  <li>e</li>
-  <li>f</li>
-  <li>g</li>
-  <li>h</li>
-</ol>
-
-<h2 id="why-this-repo-15">Why this repo</h2>
-
-<ul>
-  <li>5</li>
-  <li>6</li>
-  <li>7</li>
-  <li>8</li>
-</ul>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-gitbook theme leverages jekyll-toc to generate the Contents for the page. The TOC feature is not enabled by default. To use the TOC feature, modify the TOC configuration in _config.yml:]]></summary></entry><entry><title type="html">License</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-29-license.html" rel="alternate" type="text/html" title="License" /><published>2019-04-29T00:00:00+08:00</published><updated>2019-04-29T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/license</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-29-license.html"><![CDATA[<p>This work is open sourced under the Apache License, Version 2.0, using the
-same license as the original <a href="https://github.com/GitbookIO/gitbook">GitBook</a> repository.</p>
-
-<p>Copyright 2019 Tao He.</p>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[This work is open sourced under the Apache License, Version 2.0, using the same license as the original GitBook repository.]]></summary></entry><entry><title type="html">How to Get Started</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-28-howto.html" rel="alternate" type="text/html" title="How to Get Started" /><published>2019-04-28T00:00:00+08:00</published><updated>2019-04-28T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/howto</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-28-howto.html"><![CDATA[<p>The jekyll-gitbook theme can be used just as other <a href="https://pages.github.com/themes">Jekyll themes</a> and
-support <a href="https://github.com/sighingnow/jekyll-gitbook/fork">remote theme</a> on <a href="https://pages.github.com">Github Pages</a>, see <a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll">the official guide</a>
-as well.</p>
-
-<p>You can introduce this jekyll theme into your own site by either</p>
-
-<ul>
-  <li><a href="https://github.com/sighingnow/jekyll-gitbook/fork">Fork</a> this repository and add your markdown posts to the <code class="language-plaintext highlighter-rouge">_posts</code> folder, then
-push to your own Github repository.</li>
-  <li>Use as a remote theme in your <a href="https://github.com/sighingnow/jekyll-gitbook/blob/master/_config.yml"><code class="language-plaintext highlighter-rouge">_config.yml</code></a>(just like what we do for this
-site itself),</li>
-</ul>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Configurations</span>
-<span class="na">title</span><span class="pi">:</span>            <span class="s">Jekyll Gitbook</span>
-<span class="na">longtitle</span><span class="pi">:</span>        <span class="s">Jekyll Gitbook</span>
-
-<span class="na">remote_theme</span><span class="pi">:</span>     <span class="s">sighingnow/jekyll-gitbook</span>
-</code></pre></div></div>
-
-<blockquote class="block-tip">
-  <h5 id="tip">TIP</h5>
-
-  <p>No need to push generated HTML bundle.</p>
-</blockquote>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[The jekyll-gitbook theme can be used just as other Jekyll themes and support remote theme on Github Pages, see the official guide as well.]]></summary></entry><entry><title type="html">Why Jekyll with GitBook</title><link href="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-27-why.html" rel="alternate" type="text/html" title="Why Jekyll with GitBook" /><published>2019-04-27T00:00:00+08:00</published><updated>2019-04-27T00:00:00+08:00</updated><id>http://localhost:4000/jekyll-gitbook/jekyll/why</id><content type="html" xml:base="http://localhost:4000/jekyll-gitbook/jekyll/2019-04-27-why.html"><![CDATA[<p>GitBook is an amazing frontend style to present and organize contents (such as book chapters
-and blogs) on Web. The typical to deploy GitBook at <a href="https://pages.github.com">Github Pages</a>
-is building HTML files locally and then push to Github repository, usually to the <code class="language-plaintext highlighter-rouge">gh-pages</code>
-branch. However, it’s quite annoying to repeat such workload and make it hard for people do
-version control via git for when there are generated HTML files to be staged in and out.</p>
-
-<p>This theme takes style definition out of generated GitBook site and provided the template
-for Jekyll to rendering markdown documents to HTML, thus the whole site can be deployed
-to <a href="https://pages.github.com">Github Pages</a> without generating and uploading HTML bundle every time when there are
-changes to the original repository.</p>]]></content><author><name>Tao He</name></author><category term="Jekyll" /><summary type="html"><![CDATA[GitBook is an amazing frontend style to present and organize contents (such as book chapters and blogs) on Web. The typical to deploy GitBook at Github Pages is building HTML files locally and then push to Github repository, usually to the gh-pages branch. However, it’s quite annoying to repeat such workload and make it hard for people do version control via git for when there are generated HTML files to be staged in and out.]]></summary></entry></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YANGTONG's Blog</title>
+    <description>yang</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 04 Apr 2023 15:18:34 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Apr 2023 15:18:34 +0800</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Coursera《数字图像和视频处理基础》第二周测验</title>
+        <description>&lt;h1 id=&quot;courserafundamentals-of-digital-image-and-video-processingquiz-of-week2&quot;&gt;Coursera《Fundamentals of Digital Image and Video Processing》(Quiz of Week2)&lt;/h1&gt;
+
+&lt;h2 id=&quot;signals-and-systems&quot;&gt;Signals and Systems&lt;/h2&gt;
+&lt;p&gt;本博客为Coursera上的课程《Fundamentals of Digital Image and Video Processing》第二周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;第七题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8&quot;&gt;第八题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/digital/home/welcome&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;p&gt;1.After applying spatial filtering to an image, you find that the output image looks more blurry than the original image, i.e., some details like sharp edges are lost. Based on this description, the filter applied is most likely to be which of the following types?&lt;/p&gt;
+
+&lt;p&gt;A. A high-pass filter&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;B. A low-pass filter&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+C. A band-pass filter&lt;br /&gt;
+D. A band-stop filter&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;p&gt;2.Which one of the following impulse responses acts a high-pass filter?&lt;/p&gt;
+
+&lt;p&gt;A. &lt;img src=&quot;/img/divpweek21.png&quot; alt=&quot;p1&quot; /&gt;&lt;br /&gt;
+B. &lt;img src=&quot;/img/divpweek22.png&quot; alt=&quot;p2&quot; /&gt;&lt;br /&gt;
+C. &lt;img src=&quot;/img/divpweek23.png&quot; alt=&quot;p3&quot; /&gt; &lt;br /&gt;
+D. &lt;img src=&quot;/img/divpweek24.png&quot; alt=&quot;p4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：C&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;p&gt;3.What is the linear convolution of s1(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;) and s2(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)? &lt;br /&gt;
+  &lt;img src=&quot;/img/divpweek25.png&quot; alt=&quot;p5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A. &lt;img src=&quot;/img/divpweek26.png&quot; alt=&quot;p6&quot; /&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;B. &lt;img src=&quot;/img/divpweek27.png&quot; alt=&quot;p7&quot; /&gt;&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+C. &lt;img src=&quot;/img/divpweek28.png&quot; alt=&quot;p8&quot; /&gt;&lt;br /&gt;
+D. None of the above.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;p&gt;4.A linear shift-invariant system is fully characterizable by its impulse response.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;A. true&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+B. false&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;p&gt;5.Check all the statements that apply to any linear shift-invariant system T: &lt;br /&gt;
+  &lt;img src=&quot;/img/divpweek29.png&quot; alt=&quot;p9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;A. If the output to x(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)=δ(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;) is known, it is possible to find the output to any other input.&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;&lt;em&gt;B. The output to x(n1,n2)=e&lt;sup&gt;j(ω&lt;sub&gt;1&lt;/sub&gt;n&lt;sub&gt;1&lt;/sub&gt;+ω&lt;sub&gt;2&lt;/sub&gt;n&lt;sub&gt;2&lt;/sub&gt;)&lt;/sup&gt; is always proportional to the input, i.e., y(n1,n2)=Cx(n1,n2) where C is a complex constant.&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+C. It is possible that the zero input (i.e., x(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)=0) results in a non-zero output (i.e., y(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)≠0).&lt;br /&gt;
+D. If y(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)=0 then x(n&lt;sub&gt;1&lt;/sub&gt;,n&lt;sub&gt;2&lt;/sub&gt;)=0.&lt;br /&gt;
+&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;p&gt;6.The regions of support of two images $x(n_1,n_2)$ and $y(n_1,n_2)$ are given respectively by $S_x={(n_1,n_2)|0≤n_1≤P_1−1,0≤n_2≤P_2−1)}$ and $S_y={(n_1,n_2)|0≤n_1≤Q_1−1,0≤n_2≤Q_2−1)}$. Which of the following statements is true regarding the linear convolution of $x(n_1,n_2)$ and $y(n_1,n_2)$, i.e., $z(n_1,n_2)=x(n_1,n_2)⋆⋆y(n_1,n_2)$.&lt;/p&gt;
+
+&lt;p&gt;A. $z(n_1,n_2)$ is always non-zero over $Sz={(n_1,n_2)|0≤n_1≤P_1+Q_1−1,0≤n_2≤P_2+Q_2−1)}$.&lt;br /&gt;
+B. $z(n_1,n_2)$ is always non-zero over $Sz={(n_1,n_2)|0≤n_1≤P_1+Q_1−2,0≤n_2≤P_2+Q_2−2)}$.&lt;br /&gt;
+C. $z(n_1,n_2)$ is always zero outside $Sz={(n_1,n_2)|0≤n_1≤P_1+Q_1−1,0≤n_2≤P_2+Q_2−1)}$&lt;br /&gt;
+D. $z(n_1,n_2)$ is always zero outside $Sz={(n_1,n_2)|0≤n_1≤P_1+Q_1−2,0≤n_2≤P_2+Q_2−2)}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;7&quot;&gt;第七题&lt;/h2&gt;
+
+&lt;p&gt;7.In this problem you will implement spatial-domain low-pass filtering using MATLAB, and evaluate the difference between the filtered image and the original image using two quantitative metrics called Mean Squared Error (MSE) and Peak Signal-to-Noise Ratio (PSNR). Given two N1×N2 images x(n1,n2) and y(n1,n2), the MSE is computed as $MSE=\frac{1}{N_1+N_2}$
+$\sum_{n_1=1}^{N_1}\sum_{n_2=1^{N_2}}{[x(n_1,n_2)-y(n_1,n_2)]^2}$.&lt;/p&gt;
+
+&lt;p&gt;The PSNR is defined as $PSNR=10\lg(\frac{MAX_I^2}{MSE})$, where $MAX_I$ is the maximum possible pixel value of the images. For the 8-bit gray-scale images considered in this problem, $MAX_I$=255.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the original image from here. The original image is a 256×256 8-bit gray-scale image.&lt;/li&gt;
+  &lt;li&gt;Convert the original image from type ‘uint8’ (8-bit integer) to ‘double’ (real number).&lt;/li&gt;
+  &lt;li&gt;Create a 3×3 low-pass filter with all coefficients equal to 1/9, i.e., create a 3×3 MATLAB array with all elements equal to 1/9.&lt;/li&gt;
+  &lt;li&gt;Low-pass filter the original image (converted to type ‘double’) with the filter created in step (3). This can be done using the built-in MATLAB function “imfilter”. The function “imfilter” takes three arguments and returns one output. The first argument is the original image (converted to type ‘double’); the second argument is the low-pass filter created in step (3); and the third argument is a string specifying the boundary filtering option. For this problem, use ‘replicate’ (including the single quotes) for the third argument. The output of the function “imfilter” is the filtered image.&lt;/li&gt;
+  &lt;li&gt;Compute and record the PSNR value between the original image (converted to type ‘double’) and the filtered image by using the formulae given above.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Enter the PSNR value (up to two decimal points).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：29.30&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;code:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-MATLAB&quot;&gt;clear;
+img = imread(&quot;lena.gif&quot;);
+imgd = double(img);
+filter = ones(3,3)*1/9;
+optimg = imfilter(imgd,filter,&quot;replicate&quot;);
+psnr1 = psnr(imgd,optimg,255);
+
+printf(&quot;psnr1=%.2f\n&quot;,psnr1);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;8&quot;&gt;第八题&lt;/h2&gt;
+
+&lt;p&gt;8.Repeat steps (3) through (5) using a 5×5 low-pass filter with all coefficients equal to 1/25. Enter the PSNR values you have obtained from your experiments (The PSNR corresponding to 3×3 filter first, followed by the PSNR corresponding to 5×5 filter). Make sure you order the answers correctly and separate them by a space. Enter the numbers to 2 decimal points.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Enter the PSNR value (up to two decimal points).&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;答案：25.73&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;code:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-MATLAB&quot;&gt;clear;
+img = imread(&quot;lena.gif&quot;);
+imgd = double(img);
+filter = ones(5,5)*1/25;
+optimg = imfilter(imgd,filter,&quot;replicate&quot;);
+psnr2 = psnr(imgd,optimg,255);
+
+printf(&quot;psnr2=%.2f\n&quot;,psnr2);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        <pubDate>Wed, 17 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/17/Coursera-Digital-Image-and-Video-Processing-%E7%AC%AC%E4%BA%8C%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/17/Coursera-Digital-Image-and-Video-Processing-%E7%AC%AC%E4%BA%8C%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>图像处理</category>
+        
+        <category>MATLAB</category>
+        
+        <category>视频处理</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《Introduction to TensorFlow》第四周测验</title>
+        <description>&lt;h1 id=&quot;courseraintroduction-to-tensorflow-for-artificial-intelligence-machine-learning-and-deep-learningquiz-of-week4&quot;&gt;Coursera《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》(Quiz of Week4)&lt;/h1&gt;
+
+&lt;h2 id=&quot;using-real-world-images&quot;&gt;Using Real-world Images&lt;/h2&gt;
+&lt;p&gt;本博客为Coursera上的课程《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》第四周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;第七题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/introduction-tensorflow/&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Using Image Generator, how do you label images?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. It’s based on the directory the image is contained in&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. You have to manually do it&lt;br /&gt;
+ C. It’s based on the file name&lt;br /&gt;
+ D. TensorFlow figures it out from the contents&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What method on the Image Generator is used to normalize the image?&lt;/p&gt;
+
+    &lt;p&gt;A. Rescale_image&lt;br /&gt;
+ B. normalize&lt;br /&gt;
+ C. normalize_image&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. rescale&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;How did we specify the training size for the images?&lt;/p&gt;
+
+    &lt;p&gt;A. The training_size parameter on the validation generator&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. target_size parameter on the training generator&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ C. The target_size parameter on the validation generator&lt;br /&gt;
+ D. The training_size parameter on the training generator&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When we specify the input_shape to be (300, 300, 3), what does that mean?&lt;/p&gt;
+
+    &lt;p&gt;A. Every Image will be 300x300 pixels, and there should be 3 Convolutional Layers&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. Every Image will be 300x300 pixels, with 3 bytes to define color&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ C. There will be 300 horses and 300 humans, loaded in batches of 3&lt;br /&gt;
+ D. There will be 300 images, each size 300, loaded in batches of 3&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;If your training data is close to 1.000 accuracy, but your validation data isn’t, what’s the risk here?&lt;/p&gt;
+
+    &lt;p&gt;A. No risk, that’s a great result&lt;br /&gt;
+ B. You’re overfitting on your validation data&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. You’re overfitting on your training data&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. You’re underfitting on your validation data&lt;br /&gt;
+ &lt;strong&gt;答案：C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Convolutional Neural Networks are better for classifying images like horses and humans because:&lt;/p&gt;
+
+    &lt;p&gt;A. In these images, the features may be in different parts of the frame  &lt;br /&gt;
+ B. There’s a wide variety of horses&lt;br /&gt;
+ C. There’s a wide variety of humans&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. All of the above&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;7&quot;&gt;第七题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;After reducing the size of the images, the training results were different. Why?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. We removed some convolutions to handle the smaller images&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. There was more condensed information in the images&lt;br /&gt;
+ C. The training was faster&lt;br /&gt;
+ D. There was less information in the images&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 11 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/11/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/11/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>TensorFlow</category>
+        
+        <category>深度学习</category>
+        
+        <category>Keras</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《数字图像和视频处理基础》第一周测验</title>
+        <description>&lt;h1 id=&quot;courserafundamentals-of-digital-image-and-video-processingquiz-of-week1&quot;&gt;Coursera《Fundamentals of Digital Image and Video Processing》(Quiz of Week1)&lt;/h1&gt;
+
+&lt;h2 id=&quot;introduction-to-image-and-video-processing&quot;&gt;Introduction to Image and Video Processing&lt;/h2&gt;
+&lt;p&gt;本博客为Coursera上的课程《Fundamentals of Digital Image and Video Processing》第一周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;第七题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8&quot;&gt;第八题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/digital/home/welcome&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the followings are digital signals? Check all that apply.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. text messages received on a cellphone&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. videos streamed from online sources&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. sound tracks stored on a CD&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. pencil drawing made on a piece of paper&lt;br /&gt;
+ E. an x-ray film image&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：ABC&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Functional magnetic resonance imaging (fMRI) is a technology where volumetric scans of the brain are acquired while the subject is performing some cognitive tasks over time. Based on this description, what is the dimensionality of fMRI output signals?&lt;/p&gt;
+
+    &lt;p&gt;A. 1D&lt;br /&gt;
+ B. 2D&lt;br /&gt;
+ C. 3D&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. 4D&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ E. more information is needed to answer this question&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;True or false: All digital images are visible, i.e., they are all captured with visible light.&lt;/p&gt;
+
+    &lt;p&gt;A. true&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. false&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Digital videos are signals that are discrete in time.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. true&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. false&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Which of the following are examples of electromagnetic (EM) waves? Check all that apply.&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. microwave&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. ripples in a lake&lt;br /&gt;
+ C. sound wave&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. light from the sun&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;答案：AD&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;True or false: Digital image processing is a subject distinctly different from computer vision.&lt;/p&gt;
+
+    &lt;p&gt;A. true&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. false&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;7&quot;&gt;第七题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Approximately, how many different 100x100 binary digital images exist? How many 24bit-RGB color images of the same size exist? (Hint: for binary images each pixel can assume one of two values; for 24bit-RGB color images each pixel has three color channels and each color channel can assume one of 256 values.)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. 2&lt;sup&gt;10000&lt;/sup&gt; for binary images and 2&lt;sup&gt;24×10000&lt;/sup&gt; for 24bit-RGB color images&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. 2&lt;sup&gt;100&lt;/sup&gt; for binary images and 2&lt;sup&gt;24×100&lt;/sup&gt; for 24bit-RGB color images&lt;br /&gt;
+ C. 100&lt;sup&gt;2&lt;/sup&gt; for binary images and 100&lt;sup&gt;24&lt;/sup&gt; for 24bit-RGB color images&lt;br /&gt;
+ D. 10000&lt;sup&gt;2&lt;/sup&gt; for binary images and 10000&lt;sup&gt;24&lt;/sup&gt; for 24bit-RGB color images &lt;br /&gt;
+ E. infinitely many for both binary and 24bit-RGB color images&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;8&quot;&gt;第八题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Suppose your smart phone has a 10-megapixel camera (1 megapixel = 10&lt;sup&gt;6&lt;/sup&gt;  pixels). Without any form of compression, how big would a 24bit-RGB color image be? (Hint: 1 byte = 8 bits)&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. 30 megabytes&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. 10 megabytes&lt;br /&gt;
+ C. 300 kilobytes&lt;br /&gt;
+ D. more information is needed to answer this question&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 07 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/07/Coursera-Digital-Image-and-Video-Processing-%E7%AC%AC%E4%B8%80%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/07/Coursera-Digital-Image-and-Video-Processing-%E7%AC%AC%E4%B8%80%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>图像处理</category>
+        
+        <category>MATLAB</category>
+        
+        <category>视频处理</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《Introduction to TensorFlow》第三周测验</title>
+        <description>&lt;h1 id=&quot;courseraintroduction-to-tensorflow-for-artificial-intelligence-machine-learning-and-deep-learningquiz-of-week3&quot;&gt;Coursera《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》(Quiz of Week3)&lt;/h1&gt;
+
+&lt;h2 id=&quot;enhancing-vision-with-convolutional-neural-networks&quot;&gt;Enhancing Vision with Convolutional Neural Networks&lt;/h2&gt;
+&lt;p&gt;本博客为Coursera上的课程《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》第三周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/introduction-tensorflow/&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a Convolution?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. A technique to isolate features in images&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. A technique to make images bigger&lt;br /&gt;
+ C. A technique to make images smaller&lt;br /&gt;
+ D. A technique to filter out unwanted images&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a Pooling?&lt;/p&gt;
+
+    &lt;p&gt;A. A technique to isolate features in images&lt;br /&gt;
+ B. A technique to combine pictures&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. A technique to reduce the information in an image while maintaining features&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. A technique to make images sharper&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;How do Convolutions improve image recognition?&lt;/p&gt;
+
+    &lt;p&gt;A. They make the image clearer&lt;br /&gt;
+ B. They make processing of images faster&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. They isolate features in images&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. They make the image smaller&lt;br /&gt;
+ &lt;strong&gt;答案：C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;After passing a 3x3 filter over a 28x28 image, how big will the output be?&lt;/p&gt;
+
+    &lt;p&gt;A. 25x25&lt;br /&gt;
+ B. 31x31&lt;br /&gt;
+ C. 28x28&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. 26x26&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;After max pooling a 26x26 image with a 2x2 filter, how big will the output be?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. 13x13&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. 56x56&lt;br /&gt;
+ C. 26x26&lt;br /&gt;
+ D. 28x28&lt;br /&gt;
+ &lt;strong&gt;答案：A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Applying Convolutions on top of our Deep neural network will make training:&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. It depends on many factors. It might make your training faster or slower, and a poorly designed Convolutional layer may even be less efficient than a plain DNN!&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. Faster&lt;br /&gt;
+ C. Stay the same&lt;br /&gt;
+ D. Slower&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Mon, 01 Apr 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/04/01/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%B8%89%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/04/01/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%B8%89%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>TensorFlow</category>
+        
+        <category>深度学习</category>
+        
+        <category>Keras</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Install TensorFlow-GPU by Anaconda (conda install tensorflow-gpu)</title>
+        <description>&lt;h1 id=&quot;install-tensorflow-gpu-by-anaconda-conda-install-tensorflow-gpu&quot;&gt;Install TensorFlow-GPU by Anaconda (conda install tensorflow-gpu)&lt;/h1&gt;
+
+&lt;h2 id=&quot;it-might-be-the-simplest-way-to-install-tensorflow-or-tensorflow-gpu-by-conda-install-in-the-conda-environment&quot;&gt;It might be the simplest way to install Tensorflow or Tensorflow-GPU by conda install in the conda environment&lt;/h2&gt;
+
+&lt;p&gt;Nowadays, there are many tutorials that instruct how to install tensorflow or tensorflow-gpu. However, some people may feel it too complex just like me, because in those ways, you should download and install &lt;a href=&quot;https://www.nvidia.com/Download/index.aspx?lang=en-us&quot;&gt;NVIDIA drivers&lt;/a&gt;, and then download and install &lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot;&gt;CUDA&lt;/a&gt; (users need to pay attention to the version), afterwards you may sign an agreement and download cuDNN in &lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;NVIDIA Developer&lt;/a&gt;. Next, install python, and pip install tensorflow-gpu and so on. It’s not esay for developer to do these, let alone it might causes some other error such as &lt;strong&gt;version not match&lt;/strong&gt;, or &lt;strong&gt;conflict between other python libraries&lt;/strong&gt; and so on. Moreover, if you want to &lt;a href=&quot;https://www.tensorflow.org/install/gpu&quot;&gt;install tensorflow by compilation&lt;/a&gt;, it may take much more time.&lt;/p&gt;
+
+&lt;p&gt;Thus I strongly reconmend you not to do this, there’s a much easier way to install this. Please read the following article.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;install-anaconda&quot;&gt;Install Anaconda&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.anaconda.com/&quot;&gt;Anaconda&lt;/a&gt; is a free and open-source distribution of the Python and R programming languages for scientific computing, that aims to simplify package management and deployment.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;You can download anaconda &lt;a href=&quot;https://www.anaconda.com/distribution/#download-section&quot;&gt;here&lt;/a&gt;.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the advantage of anaconda is that it can create &lt;strong&gt;isolated environment&lt;/strong&gt; in your device, and you can configure any libraries and toolkits in the ‘env’ without affect other environment. Once you are nor satisfied of your configuration, you can simplily delete the environment.&lt;/p&gt;
+
+&lt;p&gt;Note that in you are in &lt;strong&gt;China&lt;/strong&gt;, download anaconda might take a long time due to some resons that cannot say. Instead, you can download it from &lt;a href=&quot;https://mirror.tuna.tsinghua.edu.cn/help/anaconda/&quot;&gt;&lt;strong&gt;Tsinghua mirror&lt;/strong&gt;&lt;/a&gt;, and install it &lt;strong&gt;manually&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;After downloading this successfully, try to run the installation file.
+For example, if you use ubuntu, you can cd to the path of the sh file and run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./Anaconda3-5.3.1-Linux-x86_64.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Attention that you should change the command above to your own installation file name.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Then you will successfully install Anaconda!&lt;/p&gt;
+
+&lt;h2 id=&quot;create-new-environment-by-conda&quot;&gt;Create new environment by conda&lt;/h2&gt;
+
+&lt;p&gt;If you are unwilling to create conda environment (maybe because of lazy), you can skip this section. However, I strongly reconmend you to create this &lt;strong&gt;for the convience in the future&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Run the command below:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda create &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; tf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20190328post.jpg&quot; alt=&quot;picture1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;‘tf’ is the name of your new conda environment, you can try other names as your own interest.&lt;/p&gt;
+
+&lt;p&gt;For other management you conda env, you can read &lt;a href=&quot;https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html?highlight=environment&quot;&gt;this&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-tensorflow&quot;&gt;Install Tensorflow&lt;/h2&gt;
+
+&lt;p&gt;First, you need to change to the env you have just built by conda:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;activete tf
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20190328post2.jpg&quot; alt=&quot;picture2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For Chinese users, before starting the installation, you may change the source of conda as the same reason before. For more details, read the webcite of &lt;a href=&quot;https://mirror.tuna.tsinghua.edu.cn/help/anaconda/&quot;&gt;Tsinghua Mirror&lt;/a&gt;.
+Chinese users should type in this:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda config &lt;span class=&quot;nt&quot;&gt;--add&lt;/span&gt; channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config &lt;span class=&quot;nt&quot;&gt;--add&lt;/span&gt; channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config &lt;span class=&quot;nt&quot;&gt;--set&lt;/span&gt; show_channel_urls &lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Afterwards, type in the command to install TensorFlow you need:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tensorflow-gpu
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20190328post3.jpg&quot; alt=&quot;picture3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to install a specific version of tensorflow-gpu or cpu veison, you can change the command like this:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tensorflow-gpu&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1.10.0  &lt;span class=&quot;c&quot;&gt;#if you want to install 1.10.0 version&lt;/span&gt;
+conda &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tensorflow  &lt;span class=&quot;c&quot;&gt;#if you want to install cpu version&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;After anaconda solve the environment, you just need to type in ‘y’ to confirm the installation.&lt;/p&gt;
+
+&lt;h2 id=&quot;anaconda-will-automatically-install-other-libs-and-toolkits-needed-by-tensorfloweg-cuda-and-cudnn-so-you-have-no-need-to-worry-about-this&quot;&gt;Anaconda will &lt;strong&gt;automatically&lt;/strong&gt; install other libs and toolkits needed by tensorflow(e.g. CUDA, and cuDNN), so you have no need to worry about this.&lt;/h2&gt;
+
+&lt;p&gt;Type in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;python&lt;/code&gt; to enter the python environment.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__version__&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;When you see the version of tensorflow, such as 1.10.0, you have successfully install it.&lt;/p&gt;
+
+&lt;p&gt;That’s all, Thank you.&lt;/p&gt;
+
+&lt;p&gt;If you encounter any problems, you can open an issue in the &lt;strong&gt;Comment area&lt;/strong&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 29 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/29/Install-TensorFlow-GPU-by-Anaconda(conda-install-tensorflow-gpu)/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/29/Install-TensorFlow-GPU-by-Anaconda(conda-install-tensorflow-gpu)/</guid>
+        
+        <category>ubuntu</category>
+        
+        <category>TensorFlow</category>
+        
+        <category>深度学习</category>
+        
+        <category>CUDA</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《Introduction to TensorFlow》第二周测验</title>
+        <description>&lt;h1 id=&quot;courseraintroduction-to-tensorflow-for-artificial-intelligence-machine-learning-and-deep-learningquiz-of-week2&quot;&gt;Coursera《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》(Quiz of Week2)&lt;/h1&gt;
+
+&lt;h2 id=&quot;introduction-to-computer-vision&quot;&gt;Introduction to Computer Vision&lt;/h2&gt;
+&lt;p&gt;本博客为Coursera上的课程《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》第二周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;第七题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8&quot;&gt;第八题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/introduction-tensorflow/&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What’s the name of the dataset of Fashion images used in this week’s code?&lt;/p&gt;
+
+    &lt;p&gt;A. Fashion MN&lt;br /&gt;
+ B. Fashion Tensors&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. Fashion MNIST&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. Fashion Data&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What do the above mentioned Images look like?&lt;/p&gt;
+
+    &lt;p&gt;A. 82x82 Greyscale&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. 28x28 Greyscale&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ C. 28x28 Color&lt;br /&gt;
+ D. 100x100 Color&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;How many images are in the Fashion MNIST dataset?&lt;/p&gt;
+
+    &lt;p&gt;A. 42&lt;br /&gt;
+ B. 60,000&lt;br /&gt;
+ C. 10,000&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. 70,000&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;答案：D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why are there 10 output neurons?&lt;/p&gt;
+
+    &lt;p&gt;A. To make it train 10x faster&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. There are 10 different labels&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ C. To make it classify 10x faster&lt;br /&gt;
+ D. Purely arbitrary&lt;br /&gt;
+ &lt;strong&gt;答案：B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does Relu do?&lt;/p&gt;
+
+    &lt;p&gt;A. It returns the negative of x&lt;br /&gt;
+ B. It only returns x if x is less than zero&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. It only returns x if x is greater than zero&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. For a value x, it returns 1/x&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Why do you split data into training and test sets?&lt;/p&gt;
+
+    &lt;p&gt;A. To make testing quicker&lt;br /&gt;
+ B. To train a network with previously unseen data&lt;br /&gt;
+ C. To make training quicker&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. To test a network with previously unseen data&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;7&quot;&gt;第七题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What method gets called when an epoch finishes?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. on_epoch_end&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. on_end&lt;br /&gt;
+ C. On_training_complete&lt;br /&gt;
+ D. on_epoch_finished&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;8&quot;&gt;第八题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What parameter to you set in your fit function to tell it to use callbacks?&lt;/p&gt;
+
+    &lt;p&gt;A. callback=&lt;br /&gt;
+ B. oncallback=&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;C. callbacks=&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ D. oncallbacks= &lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;C&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 28 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/28/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%BA%8C%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/28/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%BA%8C%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>TensorFlow</category>
+        
+        <category>深度学习</category>
+        
+        <category>Keras</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《Introduction to TensorFlow》第一周测验</title>
+        <description>&lt;h1 id=&quot;courseraintroduction-to-tensorflow-for-artificial-intelligence-machine-learning-and-deep-learningquiz-of-week1&quot;&gt;Coursera《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》(Quiz of Week1)&lt;/h1&gt;
+
+&lt;p&gt;本博客为Coursera上的课程《Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning》第一周的测验。&lt;/p&gt;
+
+&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;第一题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;第二题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;第三题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;第四题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;第五题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;第六题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;第七题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8&quot;&gt;第八题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;coursera课程地址&quot;&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/introduction-tensorflow/&quot;&gt;课程地址&lt;/a&gt;&lt;/h2&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;第一题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The diagram for traditional programming had Rules and Data In, but what came out?&lt;/p&gt;
+
+    &lt;p&gt;A. Binary&lt;br /&gt;
+ B. Machine Learning&lt;br /&gt;
+ C. Bugs&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. Answers&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;第二题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The diagram for Machine Learning had Answers and Data In, but what came out?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. Rules&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. Models&lt;br /&gt;
+ C. Bugs&lt;br /&gt;
+ D. Binary&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;第三题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;When I tell a computer what the data represents (i.e. this data is for walking, this data is for running), what is that process called?&lt;/p&gt;
+
+    &lt;p&gt;A. Programming the Data&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;B. Labelling the Data&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ C. Categorizing the Data&lt;br /&gt;
+ D. Learning the Data&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;B&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;第四题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is a Dense?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. A layer of connected neurons&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. A single neuron&lt;br /&gt;
+ C. Mass over Volume&lt;br /&gt;
+ D. A layer of disconnected neurons&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;第五题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does a Loss function do?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. Measures how good the current ‘guess’ is&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. Decides to stop training a neural network&lt;br /&gt;
+ C. Generates a guess&lt;br /&gt;
+ D. Figures out if you win or lose&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;第六题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does the optimizer do?&lt;/p&gt;
+
+    &lt;p&gt;A. Decides to stop training a neural network&lt;br /&gt;
+ B.Figures out how to efficiently compile your code&lt;br /&gt;
+ C. Measures how good the current guess is&lt;br /&gt;
+ &lt;strong&gt;&lt;em&gt;D. Generates a new and improved guess&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;D&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;7&quot;&gt;第七题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is Convergence?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. The process of getting very close to the correct answer&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. A programming API for AI&lt;br /&gt;
+ C. The bad guys in the next ‘Star Wars’ movie&lt;br /&gt;
+ D. A dramatic increase in loss&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;8&quot;&gt;第八题&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;What does model.fit do?&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;&lt;em&gt;A. It trains the neural network to fit one set of values to another&lt;/em&gt;&lt;/strong&gt;&lt;br /&gt;
+ B. It makes a model fit available memory&lt;br /&gt;
+ C. It optimizes an existing model&lt;br /&gt;
+ D. It determines if your activity is good for your body&lt;br /&gt;
+ &lt;strong&gt;答案&lt;/strong&gt;：&lt;strong&gt;A&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 27 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/27/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%B8%80%E5%91%A8%E6%B5%8B%E9%AA%8C/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/27/Coursera-Introduction-to-TensorFlow-%E7%AC%AC%E4%B8%80%E5%91%A8%E6%B5%8B%E9%AA%8C/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>TensorFlow</category>
+        
+        <category>深度学习</category>
+        
+        <category>Keras</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《机器学习》(吴恩达)编程作业第九周(ex8)</title>
+        <description>&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;必做题
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;estimateGaussian.m&lt;/a&gt; - Estimate the parameters of a Gaussian distribution with a diagonal covariance matrix&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;selectThreshold.m&lt;/a&gt; - Find a threshold for anomaly detection&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;cofiCostFunc.m&lt;/a&gt; - Implement the cost function for collaborative filtering&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/machine-learning/&quot;&gt;课程地址&lt;/a&gt;&lt;br /&gt;
+本周作业的官方指导文件可以从这里&lt;a href=&quot;/download/machine-learning-ex8.pdf&quot;&gt;&lt;strong&gt;下载pdf&lt;/strong&gt;&lt;/a&gt;
+–
+—&lt;/p&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;1. estimateGaussian&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;estimateGaussian&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%ESTIMATEGAUSSIAN This function estimates the parameters of a &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%Gaussian distribution using the data in X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [mu sigma2] = estimateGaussian(X), &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   The input X is the dataset with each n-dimensional data point in one row&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   The output is an n-dimensional vector mu, the mean of the data set&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   and the variances sigma^2, an n x 1 vector&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% &lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Useful variables&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You should return these values correctly&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sigma2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Compute the mean of the data and the variances&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               In particular, mu(i) should contain the mean of&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               the data for the i-th feature and sigma2(i)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               should contain variance of the i-th feature.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sigma2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;2. selectThreshold&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bestEpsilon&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestF1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectThreshold&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%SELECTTHRESHOLD Find the best threshold (epsilon) to use for selecting&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%outliers&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [bestEpsilon bestF1] = SELECTTHRESHOLD(yval, pval) finds the best&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   threshold to use for selecting outliers based on the results from a&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   validation set (pval) and the ground truth (yval).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;bestEpsilon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bestF1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;F1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;stepsize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epsilon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stepsize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% Instructions: Compute the F1 score of choosing epsilon as the&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               threshold and place the value in F1. The code at the&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               end of the loop will compare the F1 score for this&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               choice of epsilon and set it to be the best epsilon if&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               it is better than the current choice of epsilon.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% Note: You can use predictions = (pval &amp;lt; epsilon) to get a binary vector&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%       of 0's and 1's of the outlier predictions&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epsilon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;TP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;FP&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;FN&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% I'm going to add the 'eps' just in order to eliminate the waring of 'dividion by zero' in MATLAB&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% 在除数后面加eps以消除‘division by zero’的warning&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;rec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;F1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;eps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bestF1&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;bestF1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+       &lt;span class=&quot;n&quot;&gt;bestEpsilon&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epsilon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;3. cofiCostFunc&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cofiCostFunc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+                                  &lt;span class=&quot;n&quot;&gt;num_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%COFICOSTFUNC Collaborative filtering cost function&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [J, grad] = COFICOSTFUNC(params, Y, R, num_users, num_movies, ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   num_features, lambda) returns the cost and gradient for the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   collaborative filtering problem.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Unfold the U and W matrices from params&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_movies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_movies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num_features&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;num_users&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num_features&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following values correctly&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;X_grad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Theta_grad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Compute the cost function and gradient for collaborative&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               filtering. Concretely, you should first implement the cost&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               function (without regularization) and make sure it is&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               matches our costs. After that, you should implement the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               gradient and use the checkCostFunction routine to check&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               that the gradient is correct. Finally, you should implement&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               regularization.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Notes: X - num_movies  x num_features matrix of movie features&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        Theta - num_users  x num_features matrix of user features&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        Y - num_movies x num_users matrix of user ratings of movies&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        R - num_movies x num_users matrix, where R(i, j) = 1 if the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%            i-th movie was rated by the j-th user&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% You should set the following variables correctly:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        X_grad - num_movies x num_features matrix, containing the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                 partial derivatives w.r.t. to each element of X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        Theta_grad - num_users x num_features matrix, containing the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                     partial derivatives w.r.t. to each element of Theta&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;J&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.^&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.^&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.^&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;X_grad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Theta_grad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;') .* R - Y .* R)'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;grad&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Theta_grad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:)];&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Mon, 11 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/11/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E4%B9%9D%E5%91%A8(ex8)/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/11/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E4%B9%9D%E5%91%A8(ex8)/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>MATLAB</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《机器学习》(吴恩达)编程作业第八周(ex7)</title>
+        <description>&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;必做题
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;pca.m&lt;/a&gt; - Perform principal component analysis&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;projectData.m&lt;/a&gt; - Projects a data set into a lower dimensional space&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;recoverData.m&lt;/a&gt; - Recovers the original data from the projection&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;findClosestCentroids.m&lt;/a&gt; - Find closest centroids (used in K-means)&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;computeCentroids.m&lt;/a&gt; - Compute centroid means (used in K-means)&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;kMeansInitCentroids.m&lt;/a&gt; - Initialization for K-means centroids&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/machine-learning/&quot;&gt;课程地址&lt;/a&gt;&lt;br /&gt;
+本周作业的官方指导文件可以从这里&lt;a href=&quot;/download/machine-learning-ex7.pdf&quot;&gt;&lt;strong&gt;下载pdf&lt;/strong&gt;&lt;/a&gt;
+–
+—&lt;/p&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;1. pca&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%PCA Run principal component analysis on the dataset X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [U, S, X] = pca(X) computes eigenvectors of the covariance matrix of X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   Returns the eigenvectors U, the eigenvalues (on diagonal) in S&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Useful values&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: You should first compute the covariance matrix. Then, you&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               should use the &quot;svd&quot; function to compute the eigenvectors&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               and eigenvalues of the covariance matrix. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Note: When computing the covariance matrix, remember to divide by m (the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%       number of examples).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Sigma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;svd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =========================================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;2. projectData&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projectData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%PROJECTDATA Computes the reduced data representation when projecting only &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%on to the top k eigenvectors&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   Z = projectData(X, U, K) computes the projection of &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   the normalized inputs X into the reduced dimensional space spanned by&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   the first K columns of U. It returns the projected examples in Z.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Compute the projection of the data using only the top K &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               eigenvectors in U (first K columns). &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               For the i-th example X(i,:), the projection on to the k-th &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               eigenvector is given as follows:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                    x = X(i, :)';&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                    projection_k = x' * U(:, k);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;U_reduce&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U_reduce&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;3. recoverData&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X_rec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recoverData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%RECOVERDATA Recovers an approximation of the original data when using the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%projected data&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   X_rec = RECOVERDATA(Z, U, K) recovers an approximation the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   original data that has been reduced to K dimensions. It returns the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   approximate reconstruction in X_rec.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;X_rec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Compute the approximation of the data by projecting back&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               onto the original space using the top K eigenvectors in U.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               For the i-th example Z(i,:), the (approximate)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               recovered data for dimension j is given as follows:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                    v = Z(i, :)';&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                    recovered_j = v' * U(j, 1:K)';&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               Notice that U(j, 1:K) is a row vector.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;X_rec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;4. findClosestCentroids&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findClosestCentroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%FINDCLOSESTCENTROIDS computes the centroid memberships for every example&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   idx = FINDCLOSESTCENTROIDS (X, centroids) returns the closest centroids&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   in idx for a dataset X where each row is a single example. idx = m x 1 &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   vector of centroid assignments (i.e. each entry in range [1..K])&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Set K&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Go over every example, find its closest centroid, and store&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               the index inside idx at the appropriate location.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               Concretely, idx(i) should contain the index of the centroid&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               closest to example i. Hence, it should be a value in the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               range 1..K&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Note: You can use a for-loop over the examples to compute this.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;minimum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;minimum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.^&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;minimum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;idx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;5&quot;&gt;5. computeCentroids&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pca&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%PCA Run principal component analysis on the dataset X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [U, S, X] = pca(X) computes eigenvectors of the covariance matrix of X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   Returns the eigenvectors U, the eigenvalues (on diagonal) in S&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Useful values&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: You should first compute the covariance matrix. Then, you&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               should use the &quot;svd&quot; function to compute the eigenvectors&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               and eigenvalues of the covariance matrix. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Note: When computing the covariance matrix, remember to divide by m (the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%       number of examples).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Sigma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;'*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;U&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;S&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;V&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;svd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =========================================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;6&quot;&gt;6. kMeansInitCentroids&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kMeansInitCentroids&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%KMEANSINITCENTROIDS This function initializes K centroids that are to be &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%used in K-Means on the dataset X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   centroids = KMEANSINITCENTROIDS(X, K) returns K initial centroids to be&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   used with the K-Means on the dataset X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You should return this values correctly&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: You should set centroids to randomly chosen examples from&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               the dataset X&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Initialize the centroids to be random examples&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Randomly reorder the indices of examples &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;randidx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;randperm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; 
+&lt;span class=&quot;c1&quot;&gt;% Take the first K examples as centroids &lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;centroids&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randidx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;K&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Tue, 05 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/05/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E5%85%AB%E5%91%A8(ex7)/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/05/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E5%85%AB%E5%91%A8(ex7)/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>MATLAB</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Coursera《机器学习》(吴恩达)编程作业第七周(ex6)</title>
+        <description>&lt;h3 id=&quot;目录&quot;&gt;目录&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;必做题
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;gaussianKernel.m&lt;/a&gt; - Gaussian kernel for SVM&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;dataset3Params.m&lt;/a&gt; - Parameters to use for Dataset 3&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#3&quot;&gt;processEmail.m&lt;/a&gt; - Email preprocessing&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;emailFeatures.m&lt;/a&gt; -Feature extraction from emails&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Coursera&lt;a href=&quot;https://www.coursera.org/learn/machine-learning/&quot;&gt;课程地址&lt;/a&gt;&lt;br /&gt;
+本周作业的官方指导文件可以从这里&lt;a href=&quot;/download/machine-learning-ex6.pdf&quot;&gt;&lt;strong&gt;下载pdf&lt;/strong&gt;&lt;/a&gt;
+–
+—&lt;/p&gt;
+
+&lt;h2 id=&quot;1&quot;&gt;1. gaussianKernel&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gaussianKernel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%RBFKERNEL returns a radial basis function kernel between x1 and x2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   sim = gaussianKernel(x1, x2) returns a gaussian kernel between x1 and x2&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   and returns the value in sim&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Ensure that x1 and x2 are column vectors&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(:);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Fill in this function to return the similarity between x1&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               and x2 computed using a Gaussian kernel with bandwidth&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               sigma&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+    
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;2&quot;&gt;2. dataset3Params&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dataset3Params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Xval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%DATASET3PARAMS returns your choice of C and sigma for Part 3 of the exercise&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%where you select the optimal (C, sigma) learning parameters to use for SVM&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%with RBF kernel&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   [C, sigma] = DATASET3PARAMS(X, y, Xval, yval) returns your choice of C and &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   sigma. You should complete this function to return the optimal C and &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   sigma based on a cross-validation set.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Fill in this function to return the optimal C and sigma&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               learning parameters found using the cross validation set.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               You can use svmPredict to predict the labels on the cross&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               validation set. For example, &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                   predictions = svmPredict(model, Xval);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               will return the predictions on the cross validation set.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%  Note: You can compute the prediction error using &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%        mean(double(predictions ~= yval))&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.03&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;err_min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;svmTrain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gaussianKernel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;svmPredict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Xval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;double&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;err_min&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;err_min&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;C&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sigma&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;suggested_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% =========================================================================&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;3&quot;&gt;3. processEmail&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;processEmail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%PROCESSEMAIL preprocesses a the body of an email and&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%returns a list of word_indices &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   word_indices = PROCESSEMAIL(email_contents) preprocesses &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   the body of an email and returns a list of indices of the &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   words contained in the email. &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Load Vocabulary&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getVocabList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Init return value&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ========================== Preprocess Email ===========================&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Find the Headers ( \n\n and remove )&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Uncomment the following lines if you are working with raw emails with the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% full headers&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% hdrstart = strfind(email_contents, ([char(10) char(10)]));&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% email_contents = email_contents(hdrstart(1):end);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Lower case&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Strip all HTML&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Looks for any expression that starts with &amp;lt; and ends with &amp;gt; and replace&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% and does not have any &amp;lt; or &amp;gt; in the tag it with a space&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&amp;lt;[^&amp;lt;&amp;gt;]+&amp;gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Handle Numbers&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Look for one or more characters between 0-9&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[0-9]+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'number'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Handle URLS&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Look for strings starting with http:// or https://&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+                           &lt;span class=&quot;s1&quot;&gt;'(http|https)://[^\s]*'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'httpaddr'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Handle Email Addresses&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Look for strings with @ in the middle&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[^\s]+@[^\s]+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'emailaddr'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Handle $ sign&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[$]+'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'dollar'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;% ========================== Tokenize Email ===========================&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Output the email to screen as well&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'\n==== Processed Email ====\n\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Process file&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;~&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;isempty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% Tokenize and also get rid of any punctuation&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+       &lt;span class=&quot;nb&quot;&gt;strtok&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email_contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;...&lt;/span&gt;
+              &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' @$/#.-:&amp;amp;*+=[]?!(){},&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;&amp;gt;_&amp;lt;;%'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;char&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]);&lt;/span&gt;
+   
+    &lt;span class=&quot;c1&quot;&gt;% Remove any non alphanumeric characters&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;regexprep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[^a-zA-Z0-9]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% Stem the word &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% (the porterStemmer sometimes has issues, so we use a try catch block)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;porterStemmer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;strtrim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; 
+    &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% Skip the word if it is too short&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+       &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% Look up the word in the dictionary and add to word_indices if&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% found&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% Instructions: Fill in this function to add the index of str to&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               word_indices if it is in the vocabulary. At this point&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               of the code, you have a stemmed word from the email in&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               the variable str. You should look up str in the&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               vocabulary list (vocabList). If a match exists, you&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               should add the index of the word to the word_indices&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               vector. Concretely, if str = 'action', then you should&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               look up the vocabulary list to find where in vocabList&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               'action' appears. For example, if vocabList{18} =&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               'action', then, you should add 18 to the word_indices &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%               vector (e.g., word_indices = [word_indices ; 18]; ).&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% Note: vocabList{idx} returns a the word with index idx in the&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%       vocabulary list.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% &lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;% Note: You can use strcmp(str1, str2) to compare two strings (str1 and&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%       str2). It will return 1 only if the two strings are equivalent.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;strcmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vocabList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;% =============================================================&lt;/span&gt;
+
+
+    &lt;span class=&quot;c1&quot;&gt;% Print to screen, ensuring that the output lines are not too long&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;
+        &lt;span class=&quot;nb&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%s '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Print footer&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;fprintf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'\n\n=========================\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;4&quot;&gt;4. emailFeatures&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-matlab&quot; data-lang=&quot;matlab&quot;&gt;&lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emailFeatures&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%EMAILFEATURES takes in a word_indices vector and produces a feature vector&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%from the word indices&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   x = EMAILFEATURES(word_indices) takes in a word_indices vector and &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%   produces a feature vector from the word indices. &lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% Total number of words in the dictionary&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1899&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% You need to return the following variables correctly.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;% ====================== YOUR CODE HERE ======================&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% Instructions: Fill in this function to return a feature vector for the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               given email (word_indices). To help make it easier to &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               process the emails, we have have already pre-processed each&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               email and converted each word in the email into an index in&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               a fixed dictionary (of 1899 words). The variable&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               word_indices contains the list of indices of the words&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               which occur in one email.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;% &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               Concretely, if an email has the text:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                  The quick brown fox jumped over the lazy dog.&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               Then, the word_indices vector for this text might look &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               like:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               &lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                   60  100   33   44   10     53  60  58   5&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               where, we have mapped each word onto a number, for example:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                   the   -- 60&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                   quick -- 100&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%                   ...&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              (note: the above numbers are just an example and are not the&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%               actual mappings).&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              Your task is take one such word_indices vector and construct&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              a binary feature vector that indicates whether a particular&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              word occurs in the email. That is, x(i) = 1 when word i&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              is present in the email. Concretely, if the word 'the' (say,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              index 60) appears in the email, then x(60) = 1. The feature&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              vector should look like:&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%              x = [ 0 0 0 0 1 0 0 0 ... 0 0 0 0 1 ... 0 0 0 1 0 ..];&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;%&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word_indices&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;% =========================================================================&lt;/span&gt;
+    
+
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+</description>
+        <pubDate>Sun, 24 Feb 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/02/24/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E4%B8%83%E5%91%A8(ex6)/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/02/24/Coursera-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-(%E5%90%B4%E6%81%A9%E8%BE%BE)%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A%E7%AC%AC%E4%B8%83%E5%91%A8(ex6)/</guid>
+        
+        <category>机器学习</category>
+        
+        <category>MATLAB</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

@@ -2,8 +2,8 @@
 title: YANGTONG's Blog
 SEOTitle: 杨桐的博客 | yangtong's Blog
 header-img: img/post-bg-desk.jpg
-email: 暂无
-description: "（网站介绍）这仅仅是一个测试."
+email: yangtong990516@gmail.com
+description: "yang"
 keyword: "YT,YANGTONG,杨桐，杨桐的博客"
 url: "http://comeyt.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -64,7 +64,7 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: 6cbaa4389d74519e2e52                            #生成的clientID
   clientSecret: 9ad60699b9b111d887b1510d34418901ca1a0db2    #生成的clientSecret
   repo: xiaokeai18.github.io    #仓库名称
